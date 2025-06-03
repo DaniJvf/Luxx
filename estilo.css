@@ -13,10 +13,7 @@ body {
 
 }
 header{
-    top: 0;
-    padding: 0px;
-    position: sticky;
-    z-index: 1000;
+    background-color: gainsboro;
 }
 
 .head-grid-container {
