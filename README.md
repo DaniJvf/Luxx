@@ -1,10 +1,10 @@
 # Luxx - Brilla con estilo
 
-¡Bienvenido a Luxx! Nuestra tienda online donde encontrarás joyas elegantes y modernas para brillar con estilo en cualquier ocasión.
+¡Bienvenido a Luxx! Nuestra tienda online donde encontrarás joyas elegantes y modernas para brillar con estilo y dedicación en cualquier ocasión.
 
 ## Descripción
 
-Luxx es una tienda en línea especializada en la venta de joyas únicas, finas y de alta calidad. Desde anillos y pulseras hasta aretes y collares, ofrecemos piezas exclusivas diseñadas para resaltar tu personalidad y estilo.
+Luxx es una tienda en línea especializada en la venta de joyas únicas, finas y de alta calidad. Desde anillos, pulseras hasta aretes, ofrecemos piezas exclusivas diseñadas para resaltar tu personalidad y estilo.
 
 ## Características
 
@@ -63,6 +63,8 @@ Este proyecto fue desarrollado utilizando las siguientes tecnologías:
 HTML: Se utilizó HTML para estructurar el contenido de la página web, creando una base sólida para la presentación de las joyas y la navegación en la tienda.
 
 CSS: Se utilizó CSS para estilizar la página, proporcionando un diseño atractivo y moderno que mejora la experiencia del usuario.
+
+Javacript: Se utilizó para la interactividad y funcionalidades del lado del cliente.
 
 ## Características Futuras:
 

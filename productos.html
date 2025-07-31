@@ -1,93 +1,110 @@
 <!DOCTYPE html>
 <html lang="es">
 <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Luxx</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet" />
-    <link rel="icon" href="./imagenes/diamante.png" type="image/png">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Productos - Luxx</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;600&display=swap" rel="stylesheet" />
+    <link rel="icon" href="./img/diamante.png" type="image/png">
     <link rel="stylesheet" href="estilo.css" />
+    <link rel="stylesheet" href="productos.html" />
 </head>
 <body>
-    <header>
-        <!--
-        <table>
-            <tr>
-                <td>
-                    <img src="./imagenes/logo.png" width="20%" alt="logo">
-                </td>
-                <td>
-                    <h1>Luxx</h1>
-                    <p id="subtitulo">Brilla con estilo</p>
-                </td>
-                <td>
-            <a class="hipervin" id="inicio" href="./index.html">Inicio</a>
-            <a class="hipervin" id="productos" href="./productos.html">Productos</a>
-            <a class="hipervin" id="contacto" href="./contacto.html">Contacto</a>
-                </td>
-            </tr>
-        </table>
-    -->
-        <div class="head-grid-container">
-            <img id="imagen" src="./imagenes/logo.png" alt="logo" alt="logo" height="60px">
-            <h1 id="icono">Luxx</h1>
-            <p id="subtitulo">Brilla con estilo</p>
-            <a class="hipervin" id="inicio" href="./index.html">Inicio</a>
-            <a class="hipervin" id="productos" href="./productos.html">Productos</a>
-            <a class="hipervin" id="contacto" href="./contacto.html">Contacto</a>
-        </div>
-    </header>
 
-    <main>
-        <section id="productos">
-            <h2>Productos</h2>
-            <div class="card-container">
-                <div class="card">
-                    <img src="./imagenes/Ani.png" alt="Ani" /><br>
-                    <button type="submit">Ver más</button>
-                </div>
-                <div class="card">
-                    <img src="./imagenes/AnilloFino.jpg" alt="AnilloFino" /><br>
-                    <button type="submit">Ver más</button>
-                </div>
-                <div class="card">
-                    <img src="./imagenes/AnilloDeli.jpg" alt="AnilloDeli" /><br>
-                    <button type="submit">Ver más</button>
-                </div>
-                <div class="card">
-                    <img src="./imagenes/aroBasico.png" alt="aroBasico"/><br>
-                    <button type="submit">Ver más</button>
-                </div>
-                <div class="card">
-                    <img src="./imagenes/aroCorazon.png" alt="aroCorazon"/><br>
-                    <button type="submit">Ver más</button>
-                </div>
-                <div class="card">
-                    <img src="./imagenes/aroFlor.png" alt="aroFlor"/><br>
-                    <button type="submit">Ver más</button>
-                </div>
-                <div class="card">
-                    <img src="./imagenes/PulseraAbierta.jpg" alt="PulseraAbierta"/><br>
-                    <button type="submit">Ver más</button>
-                </div>
-                <div class="card">
-                    <img src="./imagenes/PulseraTrebol.jpg" alt="PulseraTrebol"/><br>
-                    <button type="submit">Ver más</button>
-                </div>
-                <div class="card">
-                    <img src="./imagenes/PulseraPiedras.jpg" alt="PulseraBrillo"/><br>
-                    <button type="submit">Ver más</button>
-                </div>
+<header>
+    <div class="logo">
+        <h1>Luxx</h1>
+        <p>Brilla con estilo</p>
+    </div>
+
+<nav id="navbar">
+    <ul class="nav-links">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="productos.html">Productos</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+        <li><a href="#" id="cart-btn">🛒 <span id="cart-count">0</span></a></li>
+    </ul>
+    <div class="burger" id="burger">&#9776;</div>
+</nav>
+</header>
+
+<main class="productos">
+    <section class="categoria">
+        <h2>Aritos</h2>
+        <div class="galeria">
+            <div class="producto">
+                <img src="img/aroFlor.png" alt="Arito 1">
+                <button onclick="agregarAlCarrito('Arito 1')">Agregar al carrito</button>
+            </div>
+            <div class="producto">
+                <img src="img/aroCorazon.png" alt="Arito 2">
+                <button onclick="agregarAlCarrito('Arito 2')">Agregar al carrito</button>
+            </div>
+            <div class="producto">
+                <img src="img/aroDoble.png" alt="Arito 3">
+                <button onclick="agregarAlCarrito('Arito 3')">Agregar al carrito</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="categoria">
+        <h2>Anillos</h2>
+        <div class="galeria">
+            <div class="producto">
+                <img src="img/AnilloCompromiso.jpg" alt="anillo 1">
+                <button onclick="agregarAlCarrito('anillo 1')">Agregar al carrito</button>
+            </div>
+            <div class="producto">
+                <img src="img/Ani.png" alt="anillo 2">
+                <button onclick="agregarAlCarrito('anillo 2')">Agregar al carrito</button>
+            </div>
+            <div class="producto">
+                <img src="img/Ani.png" alt="anillo 3">
+                <button onclick="agregarAlCarrito('anillo 3')">Agregar al carrito</button>
+            </div>
+        </div>
+    </section>
+
+    <section class="categoria">
+        <h2>Pulseras</h2>
+        <div class="galeria">
+            <div class="producto">
+                <img src="img/PulseraBrillo.jpg" alt="Pulsera 1">
+                <button onclick="agregarAlCarrito('Pulsera 1')">Agregar al carrito</button>
+            </div>
+            <div class="producto">
+                <img src="img/pulserafina.png" alt="Pulsera 2">
+                <button onclick="agregarAlCarrito('Pulsera 2')">Agregar al carrito</button>
+            </div>
+            <div class="producto">
+                <img src="img/PulseraNoche.jpg" alt="Pulsera 3">
+                <button onclick="agregarAlCarrito('Pulsera 3')">Agregar al carrito</button>
+            </div>
             </div>
         </section>
-    </main><hr>
+</main>
 
-    <footer>
-        <p>Envios a todo el pais | Comprá sin salir de casa | 20% off en efectivo o transferencia con todas las compras |
-            Estamos para sacar tus dudas y asesorarte</p>
-            <p>Tienda creada por Daniela Villanueva | <a href="mailto:danielavillanueva22@gmail.com">danielavillanueva22@gmail.com</a></p>
-            <a href="https://www.instagram.com/luxx.joyas/">
-            <img src="./imagenes/instagram.png" alt="icono instagram" width="25">
-    </footer>
+<footer>
+    <div class="footer-content">
+        <p>&copy; 2025 Luxx - Brilla con estilo</p>
+    <div class="socials">
+        <a href="https://www.instagram.com/luxx.joyas/" target="_blank">
+        <img src="./img/instagram.png" alt="Instagram" width="25"></a>
+        <a href="https://wa.me/5491167883082" target="_blank">
+        <img src="./img/whatsapp.png" alt="WhatsApp" width="25"></a>
+    </div>
+    </div>
+</footer>
+
+<script>
+    function agregarAlCarrito(nombreProducto) {
+        let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
+        carrito.push(nombreProducto);
+        localStorage.setItem("carrito", JSON.stringify(carrito));
+        alert(nombreProducto + " agregado al carrito");
+        }
+</script>
+
 </body>
+
 </html>

@@ -2,64 +2,103 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>Luxx</title>
-    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&amp;display=swap" rel="stylesheet"/>
-    <link rel="icon" href="./imagenes/diamante.png" type="image/png">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Luxx - Brilla con estilo</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;600&display=swap" rel="stylesheet" />
+    <link rel="icon" href="./img/diamante.png" type="image/png">
     <link rel="stylesheet" href="estilo.css" />
+    <link rel="stylesheet" href="productos.html" />
 </head>
+
 <body>
-    <header>
-        <div class="head-grid-container">
-            <img id="imagen" src="./imagenes/logo.png" alt="logo" alt="logo" height="60px">
-            <h1 id="icono">Luxx</h1>
-            <p id="subtitulo">Brilla con estilo</p>
-            <a class="hipervin" id="inicio" href="./index.html">Inicio</a>
-            <a class="hipervin" id="productos" href="./productos.html">Productos</a>
-            <a class="hipervin" id="contacto" href="./contacto.html">Contacto</a>
+<header>
+    <div class="logo">
+        <h1>Luxx</h1>
+        <p>Brilla con estilo</p>
+    </div>
+
+<nav id="navbar">
+    <ul class="nav-links">
+        <li><a href="index.html">Inicio</a></li>
+        <li><a href="productos.html">Productos</a></li>
+        <li><a href="contacto.html">Contacto</a></li>
+        <li><a href="#" id="cart-btn">🛒 <span id="cart-count">0</span></a></li>
+    </ul>
+    <div class="burger" id="burger">&#9776;</div>
+</nav>
+
+</header>
+
+<main>
+    <section class="productos">
+        <div class="productos">
+            <img src="img/AnilloCompromiso.jpg" alt="Anillo" />
+            <h3>Anillo Brillante</h3>
+            <p>$1.500</p>
+            <button onclick="addToCart({ name: 'Arito Elegante', price: 1200 })">Agregar al carrito</button>
         </div>
-    </header>
 
-    <main>
-        <section id="productos">
-            <h2>Productos</h2>
-            <div class="card-container">
-                <div class="card">
-                    <img src="./imagenes/PulseraBrillo.jpg" alt="Pulsera" />
-                    <h3>Pulsera</h3>
-                    <p>Una pulsera elegante que brilla con cada movimiento. Perfecta para cualquier ocasión.</p>
-                </div>
-                <div class="card">
-                    <img src="./imagenes/AnilloDeli.jpg" alt="Anillo" />
-                    <h3>Anillo</h3>
-                    <p>Un anillo que nunca pasa de moda. Ideal para complementar tu estilo diario.</p>
-                </div>
-                <div class="card">
-                    <img src="./imagenes/arosFinos.png" alt="Collar" />
-                    <h3>Aros</h3>
-                    <p>Aros diseñados para resaltar tu estilo único con un toque de sofisticación.</p>
-                </div>
+        <div class="productos">
+            <img src="img/PulseraNoche.jpg" alt="Pulsera" />
+            <h3>Pulsera Delicada</h3>
+            <p>$2.000</p>
+            <button onclick="addToCart({ name: 'Arito Elegante', price: 1200 })">Agregar al carrito</button>
+        </div>
+
+        <div class="productos">
+            <img src="img/aroFlor.png" alt="Arito" />
+            <h3>Aritos de Plata</h3>
+            <p>$1.200</p>
+            <button onclick="addToCart({ name: 'Arito Elegante', price: 1200 })">Agregar al carrito</button>
+        </div>
+    </section>
+
+    <section class="reviews">
+        <h2>Reseñas</h2>
+        <div class="review-list">
+            <div class="review">
+                <p>"Me encantaron los productos, se sienten súper delicados y elegantes."</p>
+                <span>— Camila R.</span>
             </div>
-        </section><hr>
 
-        <section id="reseñas">
-            <h2>Reseñas</h2>
-            <div class="grid-container">
-                <div class="grid-container">"¡Me encantó mi pulsera! La calidad es excelente y combina con todo. Definitivamente compraré más." María G.</div>
-                <div class="grid-container">"El anillo que pedí llegó rápido y tal como se muestra en la página. Es realmente cómodo y elegante." Juan P.</div>
-                <div class="grid-container">"Muy satisfecho con el collar. Es hermoso y el diseño es único. Recibí muchos cumplidos." Ana R.</div>
-                <div class="grid-container">"Excelente servicio y atención personalizada. Los productos tienen muy buena calidad y se nota el detalle en cada pieza." Carlos M.</div>
+            <div class="review">
+                <p>"Compré una pulsera para regalar y quedó fascinada. Gracias Luxx!"</p>
+                <span>— Laura M.</span>
             </div>
-        </section>
-    </main>
 
-    <footer><hr>
-        <p>Envios a todo el pais | Comprá sin salir de casa | 20% off en efectivo o transferencia con todas las compras | 
-            Estamos para sacar tus dudas y asesorarte</p>
-            <p>Tienda creada por Daniela Villanueva | <a href="mailto<a h:danielavillanueva22@gmail.com">danielavillanueva22@gmail.com</a></p>
-            <a href="https://www.instagram.com/luxx.joyas/" target="_blank">
-            <a href="https://www.instagram.com/luxx.joyas/">
-            <img src="./imagenes/instagram.png" alt="icono instagram" width="25">
-    </footer>
+            <div class="review">
+                <p>"La atención fue excelente y el envío muy rápido. Volveré a comprar."</p>
+                <span>— Florencia G.</span>
+            </div>
+
+            <div class="review">
+                <p>"Amo el diseño minimalista, justo lo que buscaba para mi estilo."</p>
+                <span>— Paula S.</span>
+            </div>
+        </div>
+    </section>
+
+    <section id="cart" class="cart hidden">
+        <h2>Carrito de compras</h2>
+        <ul id="cart-items"></ul>
+        <p>Total: $<span id="cart-total">0</span></p>
+    </section>
+</main>
+
+<script src="script.js"></script>
+
 </body>
+
+<footer>
+    <div class="footer-content">
+        <p>&copy; 2025 Luxx - Brilla con estilo</p>
+    <div class="socials">
+        <a href="https://www.instagram.com/luxx.joyas/" target="_blank">
+        <img src="./img/instagram.png" alt="Instagram" width="25"></a>
+        <a href="https://wa.me/5491167883082" target="_blank">
+        <img src="./img/whatsapp.png" alt="WhatsApp" width="25"></a>
+    </div>
+    </div>
+</footer>
+
 </html>
