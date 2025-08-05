@@ -7,7 +7,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Nunito:wght@300;600&display=swap" rel="stylesheet" />
     <link rel="icon" href="./img/diamante.png" type="image/png">
     <link rel="stylesheet" href="estilo.css" />
-    <link rel="stylesheet" href="productos.html" />
 </head>
 <body>
 
@@ -34,16 +33,21 @@
         <div class="galeria">
             <div class="producto">
                 <img src="img/aroFlor.png" alt="Arito 1">
-                <button onclick="agregarAlCarrito('Arito 1')">Agregar al carrito</button>
+                <h3>Arito Flor</h3>
+                <p>$2.000</p>
+                <button onclick="addToCart({ name: 'Arito Flor', price: 2000 })">Agregar al carrito</button>
             </div>
             <div class="producto">
                 <img src="img/aroCorazon.png" alt="Arito 2">
-                <button onclick="agregarAlCarrito('Arito 2')">Agregar al carrito</button>
+                <h3>Arito Corazon</h3>
+                <p>$2.000</p>
+                <button onclick="addToCart({ name: 'Arito Corazon', price: 2000 })">Agregar al carrito</button>
             </div>
             <div class="producto">
                 <img src="img/aroDoble.png" alt="Arito 3">
-                <button onclick="agregarAlCarrito('Arito 3')">Agregar al carrito</button>
-            </div>
+                <h3>Arito Doble</h3>
+                <p>$2.000</p>
+                <button onclick="addToCart({ name: 'Arito Doble', price: 2000 })">Agregar al carrito</button>            </div>
         </div>
     </section>
 
@@ -52,15 +56,21 @@
         <div class="galeria">
             <div class="producto">
                 <img src="img/AnilloCompromiso.jpg" alt="anillo 1">
-                <button onclick="agregarAlCarrito('anillo 1')">Agregar al carrito</button>
+                <h3>Anillo Comrpomiso</h3>
+                <p>$10.000</p>
+                <button onclick="addToCart({ name: 'Anillo Compromiso', price: 10000 })">Agregar al carrito</button>
             </div>
             <div class="producto">
                 <img src="img/Ani.png" alt="anillo 2">
-                <button onclick="agregarAlCarrito('anillo 2')">Agregar al carrito</button>
+                <h3>Anillo Delicado</h3>
+                <p>$3.500</p>
+                <button onclick="addToCart({ name: 'Arito Flor', price: 5000 })">Agregar al carrito</button>
             </div>
             <div class="producto">
-                <img src="img/Ani.png" alt="anillo 3">
-                <button onclick="agregarAlCarrito('anillo 3')">Agregar al carrito</button>
+                <img src="img/anillo.jpg" alt="anillo 3">
+                <h3>Anillo Simple</h3>
+                <p>$3.000</p>
+                <button onclick="addToCart({ name: 'Anillo Simple', price: 5000 })">Agregar al carrito</button>
             </div>
         </div>
     </section>
@@ -70,19 +80,44 @@
         <div class="galeria">
             <div class="producto">
                 <img src="img/PulseraBrillo.jpg" alt="Pulsera 1">
-                <button onclick="agregarAlCarrito('Pulsera 1')">Agregar al carrito</button>
+                <h3>Pulsera con Brillo</h3>
+                <p>$5.000</p>
+                <button onclick="addToCart({ name: 'Pulsera con Brillo', price: 5000 })">Agregar al carrito</button>
             </div>
             <div class="producto">
                 <img src="img/pulserafina.png" alt="Pulsera 2">
-                <button onclick="agregarAlCarrito('Pulsera 2')">Agregar al carrito</button>
+                <h3>Pulsera Fina</h3>
+                <p>$5.000</p>
+                <button onclick="addToCart({ name: 'Pulsera Fina', price: 5000 })">Agregar al carrito</button>
             </div>
             <div class="producto">
                 <img src="img/PulseraNoche.jpg" alt="Pulsera 3">
-                <button onclick="agregarAlCarrito('Pulsera 3')">Agregar al carrito</button>
+                <h3>Pulsera de Noche</h3>
+                <p>$5.000</p>
+                <button onclick="addToCart({ name: 'Pulsera de Nohce', price: 5000 })">Agregar al carrito</button>
             </div>
             </div>
         </section>
 </main>
+
+<div id="overlay" class="cart-backdrop hidden"></div>
+
+
+<section id="cart" class="cart-modal hidden">
+    <div class="cart-content">
+        <button class="close-btn" onclick="document.getElementById('cart').classList.remove('active'); document.getElementById('overlay').classList.remove('show');">×</button>
+        <h2>Carrito de compras</h2>
+        <div id="cart-items"></div>
+        <div class="cart-summary">
+            <p>Total: $<span id="cart-total">0</span></p>
+            <button id="clear-cart">Vaciar</button>
+        </div>
+    </div>
+</section>
+
+<script src="script.js"></script>
+
+</body>
 
 <footer>
     <div class="footer-content">
@@ -96,6 +131,8 @@
     </div>
 </footer>
 
+<script src="script.js"></script>
+
 <script>
     function agregarAlCarrito(nombreProducto) {
         let carrito = JSON.parse(localStorage.getItem("carrito")) || [];
@@ -104,8 +141,6 @@
         alert(nombreProducto + " agregado al carrito");
         }
 </script>
-
-<script src="script.js"></script>
 
 </body>
 

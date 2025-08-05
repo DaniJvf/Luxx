@@ -1,73 +1,31 @@
 let cart = [];
-let total = 0;
 
-function addToCart(product, price) {
-  cart.push({ product, price });
-  total += price;
-  updateCart();
-}
-
-function updateCart() {
-  const cartItems = document.getElementById("cart-items");
-  const cartTotal = document.getElementById("cart-total");
-  const cartCount = document.getElementById("cart-count");
-
-  cartItems.innerHTML = "";
-  cart.forEach(item => {
-    const li = document.createElement("li");
-    li.textContent = `${item.product} - $${item.price}`;
-    cartItems.appendChild(li);
-  });
-
-  cartTotal.textContent = total;
-  cartCount.textContent = cart.length;
-}
-
-document.getElementById("cart-btn").addEventListener("click", (e) => {
-  e.preventDefault();
-  document.getElementById("cart").classList.toggle("hidden");
-});
-
-document.getElementById("burger").addEventListener("click", () => {
-  document.querySelector(".nav-links").classList.toggle("show");
-});
-
-
-const cartBtn = document.getElementById('cart-btn');
-const cartSidebar = document.getElementById('cart-sidebar');
+const cartModal = document.getElementById('cart');
 const overlay = document.getElementById('overlay');
 const cartItemsContainer = document.getElementById('cart-items');
 const cartTotal = document.getElementById('cart-total');
+const cartCount = document.getElementById('cart-count');
 const clearCartBtn = document.getElementById('clear-cart');
+const cartBtn = document.getElementById('cart-btn');
+const closeBtn = document.querySelector('.close-btn');
 
-// Mostrar/Ocultar el carrito
-cartBtn.addEventListener('click', () => {
-  cartSidebar.classList.toggle('open');
-  overlay.classList.toggle('show');
-  renderCart();
-});
-
-// Cerrar carrito haciendo clic fuera
-overlay.addEventListener('click', () => {
-  cartSidebar.classList.remove('open');
-  overlay.classList.remove('show');
-});
-
-// Añadir producto al carrito (reutilizable)
+// Agregar producto al carrito
 function addToCart(product) {
   cart.push(product);
   updateCartCount();
   renderCart();
+  cartModal.classList.add('active');
+  overlay.classList.add('show');
+  overlay.classList.remove('hidden');
 }
 
-// Renderizar productos en el sidebar
+// Renderizar productos en el carrito
 function renderCart() {
   cartItemsContainer.innerHTML = '';
   let total = 0;
 
-  cart.forEach((item, index) => {
+  cart.forEach((item) => {
     total += item.price;
-
     const itemDiv = document.createElement('div');
     itemDiv.classList.add('cart-item');
     itemDiv.innerHTML = `${item.name} - $${item.price}`;
@@ -77,9 +35,9 @@ function renderCart() {
   cartTotal.textContent = total;
 }
 
-// Contador del ícono del carrito
+// Actualizar contador
 function updateCartCount() {
-  document.getElementById('cart-count').textContent = cart.length;
+  cartCount.textContent = cart.length;
 }
 
 // Vaciar carrito
@@ -89,3 +47,36 @@ clearCartBtn.addEventListener('click', () => {
   renderCart();
 });
 
+// Mostrar/Ocultar carrito modal
+cartBtn.addEventListener('click', () => {
+  cartModal.classList.toggle('active');
+  overlay.classList.toggle('show');
+});
+
+// Cerrar carrito al tocar el fondo
+overlay.addEventListener('click', () => {
+  cartModal.classList.remove('active');
+  overlay.classList.remove('show');
+});
+
+// Botón de cerrar (la X)
+closeBtn.addEventListener('click', () => {
+  cartModal.classList.remove('active');
+  overlay.classList.remove('show');
+});
+
+// Menú hamburguesa
+document.getElementById("burger").addEventListener("click", () => {
+  document.querySelector(".nav-links").classList.toggle("show");
+});
+
+// Capturamos todos los botones con la clase "add-to-cart"
+document.querySelectorAll('.add-to-cart').forEach((button) => {
+  button.addEventListener('click', () => {
+    const name = button.getAttribute('data-name');
+    const price = parseFloat(button.getAttribute('data-price'));
+
+    const product = { name, price };
+    addToCart(product);
+  });
+});
